@@ -1,0 +1,857 @@
+/* ---- Navbar specific ---- */
+.navbar {
+  background: #F8FAFF !important;
+  border-bottom: 1px solid #E5EDFF;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.05);
+}
+.nav-link {
+  position: relative;
+  transition: color var(--transition-fast);
+}
+.nav-link:hover {
+  color: var(--color-primary) !important;
+}
+.active-link::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: var(--radius-pill);
+}
+
+/* ---- Footer specific ---- */
+.site-footer {
+  background: var(--color-primary-dark);
+  color: #fff;
+}
+.footer-logo-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+}
+.footer-text-muted {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+.footer-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+.footer-link {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14px;
+  transition: color 150ms ease;
+}
+.footer-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.footer-contact-list {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+}
+.footer-divider {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+.footer-copyright {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ---- Fix browser autofill styling ---- */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  -webkit-text-fill-color: var(--color-text) !important;
+  border-radius: inherit;
+}
+
+/* ---- Role selector segmented buttons (always one line, no shift) ---- */
+.role-selector {
+  display: flex;
+  flex-wrap: nowrap;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 4px;
+  gap: 4px;
+}
+.role-selector button {
+  flex: 1 1 0;
+  min-width: 0;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 8px 4px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  background: transparent;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.role-selector button.active {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* ---- Hero Section Premium Styling ---- */
+.hero-section {
+  background: var(--gradient-soft);
+  padding-top: 64px;
+  padding-bottom: 80px;
+  overflow: hidden;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+}
+
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-search {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-lg);
+  padding: 6px;
+  max-width: 460px;
+  border: 1px solid var(--color-border-light);
+}
+.hero-search-input {
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+}
+.hero-search-btn {
+  border-radius: var(--radius-pill) !important;
+  padding: 12px 28px !important;
+  flex-shrink: 0;
+}
+
+.stat-number {
+  color: var(--color-primary);
+  font-size: 28px;
+  font-weight: 800;
+}
+.stat-divider {
+  width: 1px;
+  background: var(--color-border);
+}
+
+.hero-image-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.hero-blob {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  background: var(--gradient-primary);
+  opacity: 0.12;
+  border-radius: 50%;
+  filter: blur(10px);
+  z-index: 0;
+}
+.hero-image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  height: 460px;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+}
+.hero-floating-card {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .hero-image { height: 320px; }
+  .hero-blob { width: 220px; height: 220px; }
+  .hero-section { padding-top: 32px; padding-bottom: 48px; }
+}
+
+/* ---- Book Appointment specific ---- */
+.date-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 60px;
+  padding: 10px 8px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: #fff;
+  color: var(--color-text);
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+.date-pill.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.slot-btn {
+  width: 100%;
+  padding: 8px 4px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--color-text);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+.slot-btn.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+.slot-btn:hover:not(.active) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* ---- Doctor List Filter Bar ---- */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: #fff;
+  padding: 12px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border-light);
+}
+
+.filter-search {
+  flex: 1 1 280px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+}
+.filter-search input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 14px;
+  color: var(--color-text);
+}
+.filter-search input::placeholder {
+  color: var(--color-text-light);
+}
+
+.filter-select-wrap {
+  flex: 0 1 220px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+}
+.filter-select {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text);
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+@media (max-width: 576px) {
+  .filter-bar { flex-direction: column; }
+  .filter-select-wrap { flex: 1 1 auto; }
+}
+
+/* ---- Doctor Card Premium Style ---- */
+.doctor-card {
+  background: #fff;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.doctor-card-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: var(--color-primary-light);
+}
+
+.doctor-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.doctor-card-status {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.doctor-card-status.online {
+  background: var(--color-success);
+}
+.doctor-card-status.offline {
+  background: var(--color-text-light);
+}
+
+@media (max-width: 576px) {
+  .doctor-card-img-wrap {
+    height: 200px;
+  }
+}
+
+/* ---- Contact Page ---- */
+.alert-success-box {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.contact-icon-badge {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-social-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-social-icon:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.map-placeholder {
+  height: 200px;
+  background: var(--color-primary-light);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ---- Fix input-group visibility (always show border) ---- */
+.input-group {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1.5px solid var(--color-border);
+  background: #fff;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.input-group:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(11, 95, 255, 0.12);
+}
+.input-group .form-control,
+.input-group .input-group-text {
+  border: none !important;
+  box-shadow: none !important;
+  background: #fff !important;
+}
+.input-group .form-control:focus {
+  box-shadow: none !important;
+}
+
+/* Also fix plain inputs without input-group (Contact form, etc.) */
+.form-control {
+  border: 1.5px solid var(--color-border) !important;
+  background: #fff;
+}
+.form-control:focus {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 3px rgba(11, 95, 255, 0.12) !important;
+}
+
+.form-select {
+  border: 1.5px solid var(--color-border) !important;
+}
+
+/* ---- Fix checkbox border visibility ---- */
+.form-check-input {
+  border: 1.5px solid #9CA3AF !important;
+}
+.form-check-input:checked {
+  border-color: var(--color-primary) !important;
+}
+.form-check-input:focus {
+  box-shadow: 0 0 0 3px rgba(11, 95, 255, 0.15) !important;
+}
+
+
+/* ===================== NAVBAR (hardcoded colors — no CSS vars) ===================== */
+
+.mnav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: #FFFFFF;
+  border-bottom: 1px solid #E5E7EB;
+  transition: all 0.25s ease;
+}
+.mnav-scrolled {
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.08);
+}
+
+.mnav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 76px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Logo */
+.mnav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.mnav-brand-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #2563EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.mnav-brand-text {
+  font-size: 20px;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+/* Desktop links */
+.mnav-links {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 8px;
+  flex: 1;
+  justify-content: center;
+}
+.mnav-link {
+  position: relative;
+  display: inline-block;
+  padding: 8px 4px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #475569 !important;
+  text-decoration: none !important;
+  background: none !important;
+  transition: color 0.2s ease;
+}
+.mnav-link:hover {
+  color: #2563EB !important;
+}
+.mnav-link-active {
+  color: #2563EB !important;
+  font-weight: 700;
+}
+.mnav-link-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: #2563EB;
+  border-radius: 4px;
+}
+
+/* Desktop actions */
+.mnav-actions {
+  display: none;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+.mnav-login {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827 !important;
+  text-decoration: none !important;
+  padding: 8px 6px;
+  transition: color 0.2s ease;
+}
+.mnav-login:hover {
+  color: #2563EB !important;
+}
+.mnav-register {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+  background: #2563EB;
+  padding: 10px 22px;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.28);
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+.mnav-register:hover {
+  background: #1E40AF;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.35);
+}
+
+/* Mobile toggle */
+.mnav-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #EFF6FF;
+  border: none;
+  border-radius: 10px;
+  padding: 8px;
+  color: #111827;
+}
+
+/* Mobile menu panel */
+.mnav-mobile {
+  max-height: 0;
+  overflow: hidden;
+  background: #FFFFFF;
+  border-top: 0px solid #E5E7EB;
+  transition: max-height 0.3s ease;
+}
+.mnav-mobile-open {
+  max-height: 500px;
+  border-top: 1px solid #E5E7EB;
+}
+.mnav-mobile-links {
+  list-style: none;
+  margin: 0;
+  padding: 12px 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.mnav-mobile-link {
+  display: block;
+  padding: 12px 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827 !important;
+  text-decoration: none !important;
+  border-radius: 10px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.mnav-mobile-link:hover {
+  background: #EFF6FF;
+  color: #2563EB !important;
+}
+.mnav-mobile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 20px 20px;
+}
+.mnav-mobile-login {
+  justify-content: center;
+  border: 1.5px solid #E5E7EB;
+  border-radius: 10px;
+  padding: 11px;
+}
+.mnav-mobile-register {
+  padding: 12px;
+}
+
+/* Desktop breakpoint */
+@media (min-width: 992px) {
+  .mnav-links,
+  .mnav-actions {
+    display: flex;
+  }
+  .mnav-toggle {
+    display: none;
+  }
+  .mnav-mobile {
+    display: none;
+  }
+}
+
+/* ===================== DOCTOR FILTER BAR v2 — PILL STYLE ===================== */
+
+.dfc-wrap {
+  background: #FFFFFF;
+  border-radius: 100px;
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.14);
+  border: 1px solid #EFF6FF;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dfc-search {
+  flex: 1 1 260px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px 6px 6px;
+}
+.dfc-search input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 14.5px;
+  color: #111827;
+}
+.dfc-search input::placeholder {
+  color: #94A3B8;
+}
+
+.dfc-select {
+  flex: 0 1 240px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+  border-left: 1px solid #EFF6FF;
+  position: relative;
+}
+.dfc-select select {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #111827;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-right: 20px;
+}
+.dfc-chevron {
+  position: absolute;
+  right: 8px;
+  pointer-events: none;
+}
+
+.dfc-icon-badge {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #EFF6FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.dfc-icon-badge-alt {
+  background: #F3E8FF;
+}
+
+.dfc-search-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #2563EB, #3B82F6);
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  padding: 13px 26px;
+  font-size: 14.5px;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.dfc-search-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(37, 99, 235, 0.38);
+}
+
+@media (max-width: 768px) {
+  .dfc-wrap {
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 20px;
+    padding: 12px;
+    gap: 10px;
+  }
+  .dfc-search {
+    background: #F8FAFC;
+    border-radius: 12px;
+    padding: 10px 14px;
+  }
+  .dfc-select {
+    background: #F8FAFC;
+    border-radius: 12px;
+    border-left: none;
+    padding: 10px 14px;
+  }
+  .dfc-search-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+.dl-search-wrap {
+  position: relative;
+  max-width: 560px;
+  background: #FFFFFF;
+  border-radius: 100px;
+  box-shadow: 0 14px 36px rgba(37, 99, 235, 0.12);
+  border: 1.5px solid #EFF6FF;
+  display: flex;
+  align-items: center;
+  padding: 6px 8px 6px 22px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.dl-search-wrap:focus-within {
+  border-color: #93C5FD;
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.2);
+}
+.dl-search-icon {
+  color: #2563EB;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+.dl-search-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  flex: 1;
+  font-size: 15px;
+  color: #111827;
+  padding: 12px 4px;
+}
+.dl-search-input::placeholder {
+  color: #94A3B8;
+}
+.dl-clear-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: #F1F5F9;
+  color: #64748B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.dl-clear-btn:hover {
+  background: #E2E8F0;
+  color: #334155;
+}
+@media (max-width: 576px) {
+  .dl-search-wrap { max-width: 100%; padding: 4px 6px 4px 16px; }
+  .dl-search-input { font-size: 14px; padding: 10px 4px; }
+}
+
+.specialty-gradient-bg {
+  background: linear-gradient(180deg, #EFF6FF 0%, #FFFFFF 100%);
+}
+.hero-gradient-wrap {
+  background: linear-gradient(180deg, #EFF6FF 0%, #FFFFFF 100%);
+}
+

@@ -7,12 +7,28 @@ import {
 } from 'lucide-react';
 import './About.css';
 
-const team = [
-  { name: "Dr. Anshi Sharma", role: "Chief Medical Officer", image: "https://randomuser.me/api/portraits/women/44.jpg" },
-  { name: "Dr. Rohan Verma", role: "Founder & CEO", image: "https://randomuser.me/api/portraits/men/13.jpg" },
-  { name: "Dr. Vikram Singh", role: "Head of Neurology", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTycnoOr-5OdlrKCgm9gX77apTvylRPMclWALUbaXyjjQ&s=10" },
-  { name: "Dr. Priya Iyer", role: "Head of Patient Care", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdwSqJ55-F06ng-HSHmoBsIcQ98Uw1eyKQxhhEftLTjg&s=10" },
+// ✏️ EDIT THIS: put your real name, role and description here
+const developer = {
+  name: "Your Name",
+  role: "Full Stack Developer",
+  desc: "MediCare+ is my B.Tech major project. I designed and built it to make doctor discovery and appointment booking feel clear, simple and comfortable on every device.",
+};
+
+const devFocus = [
+  { icon: MousePointerClick, title: "Clean, simple UI", desc: "Easy to understand at a glance." },
+  { icon: MonitorSmartphone, title: "Responsive design", desc: "Works on desktop, tablet and mobile." },
+  { icon: Compass, title: "Easy navigation", desc: "Clear routes between pages." },
 ];
+
+const techStack = ["React", "Vite", "Bootstrap", "React Router", "Lucide Icons"];
+
+const initials = developer.name
+  .split(' ')
+  .filter(Boolean)
+  .map((word) => word[0])
+  .join('')
+  .slice(0, 2)
+  .toUpperCase();
 
 const problems = [
   { problem: "Confusing doctor search", solution: "Verified doctor profiles" },
@@ -551,30 +567,60 @@ function About() {
         </div>
       </section>
 
-      {/* ================= TEAM ================= */}
-      <section className="team-section">
+      {/* ================= BEHIND THE PROJECT (redesigned) ================= */}
+      <section className="dev-section" aria-labelledby="dev-title">
         <div className="container">
-          <div className="text-center mb-4">
-            <span className="about-section-label">Meet The Team</span>
-            <h2 className="about-section-heading">The people behind MediCare+</h2>
+          <div className="dev-header">
+            <span className="dev-label">Behind The Project</span>
+            <h2 id="dev-title" className="dev-heading">
+              Built by a developer, <span className="dev-heading-accent">for patients.</span>
+            </h2>
           </div>
-          <div className="row g-4">
-            {team.map((member, i) => (
-              <div key={i} className="col-6 col-md-3">
-                <div className="about-team-card">
-                  <div className="about-team-avatar-wrap">
-                    <img src={member.image} alt={member.name} className="about-team-avatar" />
-                  </div>
-                  <div className="about-team-name">{member.name}</div>
-                  <div className="about-team-role">{member.role}</div>
-                </div>
+
+          <article className="dev-card">
+            {/* Left: identity panel */}
+            <div className="dev-side">
+              <span className="dev-side-deco dev-side-deco-1" aria-hidden="true" />
+              <span className="dev-side-deco dev-side-deco-2" aria-hidden="true" />
+
+              <span className="dev-avatar" aria-hidden="true">{initials}</span>
+              <h3 className="dev-name">{developer.name}</h3>
+              <span className="dev-role">{developer.role}</span>
+            </div>
+
+            {/* Right: details */}
+            <div className="dev-main">
+              <span className="dev-main-label">About this project</span>
+              <p className="dev-desc">{developer.desc}</p>
+
+              <ul className="dev-focus">
+                {devFocus.map((item) => (
+                  <li key={item.title} className="dev-focus-item">
+                    <span className="dev-focus-icon" aria-hidden="true">
+                      <item.icon size={18} strokeWidth={2} />
+                    </span>
+                    <span className="dev-focus-text">
+                      <span className="dev-focus-title">{item.title}</span>
+                      <span className="dev-focus-desc">{item.desc}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="dev-stack">
+                <span className="dev-stack-label">Built with</span>
+                <ul className="dev-tags" aria-label="Technologies used">
+                  {techStack.map((tech) => (
+                    <li key={tech} className="dev-tag">{tech}</li>
+                  ))}
+                </ul>
               </div>
-            ))}
-          </div>
+            </div>
+          </article>
         </div>
       </section>
 
-      {/* ================= FINAL CTA (redesigned) ================= */}
+      {/* ================= FINAL CTA ================= */}
       <section className="fcta-section" aria-labelledby="fcta-title">
         <div className="container">
           <div className="fcta-banner">
